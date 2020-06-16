@@ -18,15 +18,23 @@ Ticket.prototype.calculatePrice = function (ticket) {
   return price;
 }
 
+const assignVariables = function() {
+  const title = $("#title").val();
+  const time = $("#time").val();
+  const age = parseInt($("#age").val());
+  return title, time, age;
+}
+
+const showPrice = function(totalPrice) {
+  $(".price").text(totalPrice);
+  $("#total-price").show();
+} 
+
 $(document).ready(function() {
   $("#new-ticket").submit(function(event) {
     event.preventDefault();
-    const title = $("#title").val();
-    const time = $("#time").val();
-    const age = parseInt($("#age").val());
-    const ticket = new Ticket(title, time, age);
+    const ticket = new Ticket(assignVariables());
     const totalPrice = ticket.calculatePrice(ticket);
-    $(".price").text(totalPrice);
-    $("#total-price").show();
+    showPrice(totalPrice);
   });
 });
