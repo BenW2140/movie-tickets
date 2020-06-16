@@ -7,28 +7,34 @@
   <link href="css/styles.css" rel="stylesheet">
   <script src="js/jquery-3.5.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title>Document</title>
+  <title>Movie Tickets</title>
 </head>
 <body>
   <div class="container">
     <form id="new-ticket">
+      <label>Movie Title:</label>
       <select class="form-control" id="title">
-        <option value="avatar-2">Avatar 2</option>
-        <option value="sonic">Sonic the Hedgehog</option>
-        <option value="the-quiet-place">The Quiet Place</option>
-        <option value="artemis-fowl">Artemis Fowl</option>
+        <option>Avatar 2</option>
+        <option>Sonic the Hedgehog</option>
+        <option>The Quiet Place</option>
+        <option>Artemis Fowl</option>
       </select>
+      <label>Time of Day:</label>
       <select class="form-control" id="time">
-        <option value="morning">Morning</option>
-        <option value="afternoon">Afternoon</option>
-        <option value="evening">Evening</option>
-        <option value="night">Night</option>
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Evening</option>
+        <option>Night</option>
       </select>
       <div class="form-group">
         <label for="age">Enter your age:</label>
         <input id="age" class="form-control" type="number" required>
       </div>
+      <button type="submit" class="btn">Confirm</button>
     </form>
+    <div id="total-price">
+      <p>Your total price is: $<span class="price"></span></p>
+    </div>
   </div>
 </body>
 </html>
